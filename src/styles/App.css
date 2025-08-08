@@ -1,0 +1,19 @@
+@import url(reset.css);
+
+body {
+}
+
+h1 {
+  color: red;
+}
+
+.resume {
+  background-color: wheat;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}

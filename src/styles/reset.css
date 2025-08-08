@@ -66,4 +66,8 @@ h6 {
   isolation: isolate;
 }
 
+label {
+  display: block;
+}
+
 /* END OF CSS RESET */
