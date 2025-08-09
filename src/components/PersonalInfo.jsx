@@ -1,28 +1,35 @@
 import { Input } from "./Input";
 
-export function PersonalInfo({ updateValue, info, setInfo }) {
+export function PersonalInfo({ updateAllData, allData }) {
+  const newAllData = { ...allData };
+
+  const updateEducationInfo = (prop, value) => {
+    newAllData.personalInfo[prop] = value;
+    updateAllData(newAllData);
+  };
+
   return (
-    <>
+    <div>
       <Input
-        value={info.name}
-        name='name'
-        onChange={(e) => updateValue(e.target.value, "name", setInfo, info)}
+        label={"name"}
+        value={allData.personalInfo.name}
+        onChange={(e) => updateEducationInfo("name", e.target.value)}
       ></Input>
       <Input
-        value={info.address}
-        name='address'
-        onChange={(e) => updateValue(e.target.value, "address", setInfo, info)}
+        label={"address"}
+        value={allData.personalInfo.address}
+        onChange={(e) => updateEducationInfo("address", e.target.value)}
       ></Input>
       <Input
-        value={info.email}
-        name='email'
-        onChange={(e) => updateValue(e.target.value, "email", setInfo, info)}
+        label={"email"}
+        value={allData.personalInfo.email}
+        onChange={(e) => updateEducationInfo("email", e.target.value)}
       ></Input>
       <Input
-        value={info.number}
-        name='number'
-        onChange={(e) => updateValue(e.target.value, "number", setInfo, info)}
+        label={"number"}
+        value={allData.personalInfo.number}
+        onChange={(e) => updateEducationInfo("number", e.target.value)}
       ></Input>
-    </>
+    </div>
   );
 }

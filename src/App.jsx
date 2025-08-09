@@ -1,56 +1,47 @@
 import { useState } from "react";
 import "./styles/App.css";
+import { Education } from "./components/Education";
 import { Resume } from "./components/Resume";
 import { PersonalInfo } from "./components/PersonalInfo";
-import { Education } from "./components/Education";
 
 function App() {
-  const [personalInfo, setPersonalInfo] = useState({
-    name: "Danilo Casim Jr",
-    address: "lol",
-    email: "danilo@casimemail",
-    number: "0953343434",
+  const [allData, setAllData] = useState({
+    personalInfo: {
+      name: "Danilo Casim",
+      address: "adress",
+      email: "danilo@gmail",
+      number: "08982242",
+    },
+    education: [
+      {
+        school: "PLMUN",
+        degree: "LOL",
+        location: "Muntinlupa",
+        schoolStart: "2332-232-2",
+        schoolEnd: "232-45-4",
+      },
+    ],
   });
 
-  const [educationalInfo, setEducationalInfo] = useState({
-    school: "PLMUN",
-    degree: "BSCS",
-    schoolLocation: "lol",
-    degreeStart: "MAY- 2323",
-    degreeEnd: "June- 3223",
-  });
-
-  const data = { ...personalInfo, ...educationalInfo };
-
-  // currentIndex of section page
-  // array of values
-
-  const updateValue = (value, prop, setState, info) => {
-    const newData = {
-      ...info,
-      [prop]: value,
-    };
-    setState(newData);
+  const updateAllData = (newAllData) => {
+    setAllData(newAllData);
   };
 
   return (
     <div className='container'>
       <div className='inputs-container'>
         <PersonalInfo
-          updateValue={updateValue}
-          info={personalInfo}
-          setInfo={setPersonalInfo}
+          allData={allData}
+          updateAllData={(value) => updateAllData(value)}
         ></PersonalInfo>
-
         <Education
-          updateValue={updateValue}
-          info={educationalInfo}
-          setInfo={setEducationalInfo}
+          allData={allData}
+          updateAllData={(value) => updateAllData(value)}
         ></Education>
       </div>
 
       <div className='resume-container resume'>
-        <Resume data={data}></Resume>
+        <Resume info={allData}></Resume>
       </div>
     </div>
   );
