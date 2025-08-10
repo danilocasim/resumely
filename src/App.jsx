@@ -3,41 +3,54 @@ import "./styles/App.css";
 import { Education } from "./components/Education";
 import { Resume } from "./components/Resume";
 import { PersonalInfo } from "./components/PersonalInfo";
+import { Experience } from "./components/Experience";
+import { Skills } from "./components/Skills";
+import { initialInfo } from "./components/InitialInfo";
 
 function App() {
-  const [allData, setAllData] = useState({
-    personalInfo: {
-      name: "Danilo Casim",
-      address: "adress",
-      email: "danilo@gmail",
-      number: "08982242",
-    },
-    education: [
-      {
-        school: "PLMUN",
-        degree: "LOL",
-        location: "Muntinlupa",
-        schoolStart: "2332-232-2",
-        schoolEnd: "232-45-4",
-      },
-    ],
-  });
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [allData, setAllData] = useState(initialInfo);
+
+  const components = [
+    <PersonalInfo
+      allData={allData}
+      updateAllData={(value) => updateAllData(value)}
+    />,
+    <Education
+      allData={allData}
+      updateAllData={(value) => updateAllData(value)}
+    />,
+    <Experience
+      allData={allData}
+      updateAllData={(value) => updateAllData(value)}
+    />,
+    <Skills
+      allData={allData}
+      updateAllData={(value) => updateAllData(value)}
+    />,
+  ];
+
+  const incrementIndex = () => {
+    setCurrentIndex(currentIndex + 1);
+  };
+
+  const decrementIndex = () => {
+    setCurrentIndex(currentIndex - 1);
+  };
 
   const updateAllData = (newAllData) => {
     setAllData(newAllData);
   };
-
   return (
     <div className='container'>
       <div className='inputs-container'>
-        <PersonalInfo
-          allData={allData}
-          updateAllData={(value) => updateAllData(value)}
-        ></PersonalInfo>
-        <Education
-          allData={allData}
-          updateAllData={(value) => updateAllData(value)}
-        ></Education>
+        {currentIndex > 0 && (
+          <button onClick={decrementIndex}>Previous Page</button>
+        )}{" "}
+        {components.length - 1 > currentIndex && (
+          <button onClick={incrementIndex}>Next Page</button>
+        )}
+        {components[currentIndex]}
       </div>
 
       <div className='resume-container resume'>
