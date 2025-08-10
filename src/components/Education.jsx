@@ -65,14 +65,16 @@ export function Education({ updateAllData, allData }) {
         onChange={(e) => updateEducationInfo("schoolEnd", e.target.value)}
       ></Input>
 
-      <button
-        onClick={() => {
-          updateAllData(newAllData);
-          incrementIndex();
-        }}
-      >
-        Add
-      </button>
+      {newAllData.education.length - 1 == currentIndex && (
+        <button
+          onClick={() => {
+            updateAllData(newAllData);
+            incrementIndex();
+          }}
+        >
+          Add
+        </button>
+      )}
     </div>
   );
 }
