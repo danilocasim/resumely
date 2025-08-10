@@ -17,6 +17,31 @@ export function Resume({ info }) {
           </>
         );
       })}
+
+      {info.experience.map((data) => {
+        return (
+          <>
+            <h1>{data.company}</h1>
+            <h1>{data.position}</h1>
+            <h1>{data.location}</h1>
+            <h1>{data.startWorking}</h1>
+            <h1>{data.endWorking}</h1>
+
+            {data.keyResponsibilities.map((res) => {
+              return (
+                <>
+                  <h1>{res}</h1>
+                </>
+              );
+            })}
+          </>
+        );
+      })}
+
+      <h1>{info.skills.languages}</h1>
+      <h1>{info.skills.frameworks}</h1>
+      <h1>{info.skills.devTools}</h1>
+      <h1>{info.skills.libraries}</h1>
     </>
   );
 }
