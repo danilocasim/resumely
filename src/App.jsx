@@ -6,6 +6,8 @@ import { PersonalInfo } from "./components/PersonalInfo";
 import { Experience } from "./components/Experience";
 import { Skills } from "./components/Skills";
 import { initialInfo } from "./components/InitialInfo";
+import Icon from "@mdi/react";
+import { mdiChevronLeft, mdiChevronRight } from "@mdi/js";
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -44,18 +46,28 @@ function App() {
   return (
     <div className='container'>
       <div className='inputs-container'>
-        {currentIndex > 0 && (
-          <button onClick={decrementIndex}>Previous Page</button>
-        )}{" "}
-        {components.length - 1 > currentIndex && (
-          <button onClick={incrementIndex}>Next Page</button>
-        )}
         {components[currentIndex]}
+        <div className='slides'>
+          {currentIndex > 0 && (
+            <Icon
+              className='slide-left'
+              onClick={decrementIndex}
+              path={mdiChevronLeft}
+              size={3}
+            />
+          )}
+          {components.length - 1 > currentIndex && (
+            <Icon
+              className='slide-right'
+              onClick={incrementIndex}
+              path={mdiChevronRight}
+              size={3}
+            />
+          )}
+        </div>
       </div>
 
-      <div className='resume-container resume'>
-        <Resume info={allData}></Resume>
-      </div>
+      <Resume info={allData}></Resume>
     </div>
   );
 }
