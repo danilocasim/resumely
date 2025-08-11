@@ -9,7 +9,8 @@ export function Skills({ updateAllData, allData }) {
   };
 
   return (
-    <div>
+    <div className='skills inputs'>
+      <h1 className='title'>Skills</h1>
       <Input
         label={"languages"}
         value={allData.skills.languages}
