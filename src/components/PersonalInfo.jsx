@@ -9,7 +9,8 @@ export function PersonalInfo({ updateAllData, allData }) {
   };
 
   return (
-    <div>
+    <div className='personal inputs'>
+      <h1 className='title'>Personal Info</h1>
       <Input
         label={"name"}
         value={allData.personalInfo.name}
