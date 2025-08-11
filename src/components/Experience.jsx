@@ -1,5 +1,8 @@
 import { Input } from "./Input";
 import { useState } from "react";
+import Icon from "@mdi/react";
+
+import { mdiTrashCanOutline } from "@mdi/js";
 
 export function Experience({ updateAllData, allData }) {
   const [currentIndex, setIndex] = useState(0);
@@ -95,22 +98,26 @@ export function Experience({ updateAllData, allData }) {
         onChange={(e) => updateExperienceInfo("endWorking", e.target.value)}
       ></Input>
       <button onClick={addResponsibility}>Add Responsibility</button>
-      <>
+      <div className='responsibility-wrapper'>
         {newAllData.experience[currentIndex].keyResponsibilities.map(
           (responsibility, index) => {
             return (
-              <>
-                <button onClick={deleteResponsibility}> delete</button>
+              <div className='responsibility'>
                 <Input
                   label={"Key Responsibility"}
                   value={responsibility}
                   onChange={(e) => updateResponsibility(e.target.value, index)}
-                ></Input>
-              </>
+                ></Input>{" "}
+                <Icon
+                  onClick={() => deleteResponsibility(index)}
+                  path={mdiTrashCanOutline}
+                  size={1.5}
+                />
+              </div>
             );
           }
         )}
-      </>
+      </div>
 
       {newAllData.experience.length - 1 == currentIndex && (
         <button
