@@ -24,7 +24,7 @@ export function Education({ updateAllData, allData }) {
   };
 
   const deleteCurrentInfo = () => {
-    decrementIndex();
+    if (currentIndex > 0) decrementIndex();
     newAllData.education.splice(currentIndex, 1);
     updateAllData(newAllData);
   };
