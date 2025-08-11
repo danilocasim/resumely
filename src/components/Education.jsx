@@ -30,14 +30,19 @@ export function Education({ updateAllData, allData }) {
   };
 
   return (
-    <div>
+    <div className='education inputs'>
+      <h1 className='title'>Education</h1>
       {newAllData.education.length - 1 !== 0 && (
         <button onClick={deleteCurrentInfo}>Delete</button>
       )}
-      {0 < currentIndex && <button onClick={decrementIndex}>previous</button>}
-      {newAllData.education.length - 1 > currentIndex && (
-        <button onClick={incrementIndex}>next</button>
-      )}
+      <div className='slides-info'>
+        {0 < currentIndex && (
+          <button onClick={decrementIndex}>Previous Info</button>
+        )}
+        {newAllData.education.length - 1 > currentIndex && (
+          <button onClick={incrementIndex}>Next Info</button>
+        )}
+      </div>
       <Input
         label={"school"}
         value={allData.education[currentIndex].school}
@@ -58,13 +63,11 @@ export function Education({ updateAllData, allData }) {
         value={allData.education[currentIndex].schoolStart}
         onChange={(e) => updateEducationInfo("schoolStart", e.target.value)}
       ></Input>
-
       <Input
         label={"School End"}
         value={allData.education[currentIndex].schoolEnd}
         onChange={(e) => updateEducationInfo("schoolEnd", e.target.value)}
       ></Input>
-
       {newAllData.education.length - 1 == currentIndex && (
         <button
           onClick={() => {
