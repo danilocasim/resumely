@@ -67,9 +67,9 @@ export function Experience({ updateAllData, allData }) {
         {0 < currentIndex && (
           <button onClick={decrementIndex}>Previous Info</button>
         )}
-      {newAllData.experience.length - 1 > currentIndex && (
+        {newAllData.experience.length - 1 > currentIndex && (
           <button onClick={incrementIndex}>Next Info</button>
-      )}
+        )}
       </div>
       <Input
         label={"company"}
