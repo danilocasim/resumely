@@ -55,14 +55,19 @@ export function Experience({ updateAllData, allData }) {
   };
 
   return (
-    <div>
+    <div className='experience inputs'>
+      <h1 className='title'>Experience</h1>
       {newAllData.experience.length - 1 !== 0 && (
         <button onClick={deleteCurrentInfo}>Delete</button>
       )}
-      {0 < currentIndex && <button onClick={decrementIndex}>previous</button>}
+      <div className='slides-info'>
+        {0 < currentIndex && (
+          <button onClick={decrementIndex}>Previous Info</button>
+        )}
       {newAllData.experience.length - 1 > currentIndex && (
-        <button onClick={incrementIndex}>next</button>
+          <button onClick={incrementIndex}>Next Info</button>
       )}
+      </div>
       <Input
         label={"company"}
         value={allData.experience[currentIndex].company}
