@@ -1,27 +1,60 @@
 export const initialInfo = {
   personalInfo: {
-    name: "Danilo Casim",
-    address: "adress",
-    email: "danilo@gmail",
-    number: "08982242",
+    name: "Danilo Casim Jr.",
+    address: "407 real street, Talon Uno, Las Pinas City",
+    email: "danilocasim@gmail.com",
+    number: "09234256421",
   },
   education: [
     {
-      school: "PLMUN",
-      degree: "LOL",
-      location: "Muntinlupa",
-      schoolStart: "2332-232-2",
-      schoolEnd: "232-45-4",
+      school: "Pamantasan ng Lungsod ng Muntinlupa",
+      degree: "Bachelor of Science in Computer Science",
+      location: "City of Muntinlupa",
+      schoolStart: "August 2, 2024",
+      schoolEnd: "Present",
+    },
+    {
+      school: "Pamantasan ng Lungsod ng Muntinlupa",
+      degree: "Bachelor of Science in Computer Science",
+      location: "City of Muntinlupa",
+      schoolStart: "August 2, 2024",
+      schoolEnd: "Present",
     },
   ],
   experience: [
     {
-      company: "Company 1",
+      company: "Accenture",
       position: "Software Engineer",
-      location: "Italy",
-      startWorking: "23254",
-      endWorking: "232343",
-      keyResponsibilities: ["responsibility 1", "responsibility 2"],
+      location: "BGC Manila",
+      startWorking: "June 9, 2028",
+      endWorking: "Present",
+      keyResponsibilities: [
+        "Beginning with your most recent position, describe your experience, skills, and resulting outcomes in bullet or paragraph form. ",
+        "Begin each line with an action verb and include details that will help the reader understand your accomplishments, skills, knowledge, abilities, or achievements.",
+      ],
+    },
+
+    {
+      company: "Accenture",
+      position: "Software Engineer",
+      location: "BGC Manila",
+      startWorking: "June 9, 2028",
+      endWorking: "Present",
+      keyResponsibilities: [
+        "Beginning with your most recent position, describe your experience, skills, and resulting outcomes in bullet or paragraph form. ",
+        "Begin each line with an action verb and include details that will help the reader understand your accomplishments, skills, knowledge, abilities, or achievements.",
+      ],
+    },
+    {
+      company: "Accenture",
+      position: "Software Engineer",
+      location: "BGC Manila",
+      startWorking: "June 9, 2028",
+      endWorking: "Present",
+      keyResponsibilities: [
+        "Beginning with your most recent position, describe your experience, skills, and resulting outcomes in bullet or paragraph form. ",
+        "Begin each line with an action verb and include details that will help the reader understand your accomplishments, skills, knowledge, abilities, or achievements.",
+      ],
     },
   ],
 
