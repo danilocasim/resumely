@@ -25,7 +25,7 @@ export function Experience({ updateAllData, allData }) {
   };
 
   const deleteCurrentInfo = () => {
-    decrementIndex();
+    if (currentIndex > 0) decrementIndex();
     newAllData.experience.splice(currentIndex, 1);
     updateAllData(newAllData);
   };
