@@ -33,18 +33,6 @@ export const initialInfo = {
         "Begin each line with an action verb and include details that will help the reader understand your accomplishments, skills, knowledge, abilities, or achievements.",
       ],
     },
-
-    {
-      company: "Accenture",
-      position: "Software Engineer",
-      location: "BGC Manila",
-      startWorking: "June 9, 2028",
-      endWorking: "Present",
-      keyResponsibilities: [
-        "Beginning with your most recent position, describe your experience, skills, and resulting outcomes in bullet or paragraph form. ",
-        "Begin each line with an action verb and include details that will help the reader understand your accomplishments, skills, knowledge, abilities, or achievements.",
-      ],
-    },
     {
       company: "Accenture",
       position: "Software Engineer",

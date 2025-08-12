@@ -49,7 +49,6 @@ nav button {
   padding: 0.2in;
   min-height: 50vh;
 
-  /* padding: .5in; desktop*/
   overflow-y: scroll;
 }
 
@@ -160,6 +159,7 @@ nav button {
 
   .resume {
     height: 70vh;
+    padding: 0.5in;
   }
 }
 
